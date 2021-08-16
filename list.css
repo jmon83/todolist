@@ -6,7 +6,7 @@
     margin-bottom: 5px;
 }
 
-.todo {
+.thingsToDo {
     margin-bottom: 10px;
     opacity: 0;
     -webkit-animation: fadeIn .5s linear forwards;
