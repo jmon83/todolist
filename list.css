@@ -1,21 +1,91 @@
-#theList {
-    margin-top: 10px;
+body {
+    margin: 0;
+    min-width: 250px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-#theInput {
-    margin-bottom: 5px;
+* {
+    box-sizing: border-box;
 }
 
-.thingsToDo {
-    margin-bottom: 10px;
-    opacity: 0;
-    -webkit-animation: fadeIn .5s linear forwards;
-    -moz-animation: fadeIn .5s linear forwards;
-    animation: fadeIn .5s linear forwards;
+h5 {
+    margin: 5px;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 16px;
+    transition: 1s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+ul li:hover {
+    background: #CEDADF;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+    background-color: #405863;
+    color: white;
+}
+
+.header {
+    background-color: #006989;
+    padding: 20px 40px;
+    color: white;
+    text-align: center;
+}
+
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input {
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+.addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
 }

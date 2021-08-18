@@ -1,45 +1,44 @@
- document.addEventListener('DOMContentLoaded', 
- function () {
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var input = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(input);
+  myNodelist[i].appendChild(span);
+}
 
-     var theList = document.getElementById('theList');
-     var theInput = document.getElementById('theInput');
-     var addButton = document.getElementById('addButton');
-     var theCount = 0;
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
 
-     var addToDoItem = function() {
-         var toDoCol = document.createElement('div');
-         toDoCol.setAttribute('class', 'col-xs-12 thingsToDo');
-         var toDoRow = document.createElement('div');
-         toDoRow.setAttribute('class', 'row');
-         var removeButton = document.createElement('button');
-         removeButton.setAttribute('class', 'btn btn-danger remove-button');
-         removeButton.innerHTML = "X";
-         removeButton.onclick = function () {
-             var child = this.parentNode.parentNode;
-             theList.removeChild(child);
-         };
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    false;
+  } else {
+    document.getElementById("todo").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
 
-    var h5 = document.createElement('h5');
-    h5.setAttribute('class', 'col-xs-8');
-    h5.innerHTML = theInput.value;
-    toDoRow.appendChild(h5);
-    toDoRow.appendChild(removeButton);
-    toDoCol.appendChild(toDoRow);
-    theList.appendChild(toDoCol);
-     };
+  var span = document.createElement("SPAN");
+  var input = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(input);
+  li.appendChild(span);
 
-    var checkTheToDo = function () {
-        if (theCount < 10 && theInput.value !== '') {
-            addToDoItem();
-            theCount++;
-            theInput.value = '';
-        }
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
     }
-    addButton.addEventListener('click', checkTheToDo);
-
-    theInput.addEventListener('keyup', function (event) {
-        if (event.key === "Enter") {
-            checkTheToDo();
-        }
-    });
- });
+  }
+}
