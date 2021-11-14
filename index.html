@@ -16,13 +16,17 @@
     <input type="text" id="myInput" placeholder="Add Item">
     <span onclick="newElement()" class="addBtn">Add</span>
 </div>
-<div class="table-responsive">
-    <table class="table table-danger table-striped table-hover table-sm table-borderless">
+<div id = "theMain" class="table-responsive">
+    <table class="table table-hover table-sm table-borderless">
         <tbody id = "theList">
-        <tr>
-            <td>Mark</td>
-        </tr>
+
         </tbody>
+        <tfoot>
+        <tr>
+            <th  id = "tFoot">
+            </th>
+        </tr>
+        </tfoot>
     </table>
 </div>
 
