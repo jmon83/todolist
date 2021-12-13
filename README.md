@@ -1,2 +1,2 @@
 # todolist
- Jay ToDo List
+Altcademy To-Do List with Ajax/CRUD
